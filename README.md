@@ -48,19 +48,47 @@
 | Concurrencia | Kotlin Coroutines + Flow |
 | Arquitectura | MVVM (ViewModel + Repository) |
 
-## 📂 Estructura del proyecto
+## 📂 Estructura del repositorio
 
 ```
-app/src/main/java/co/edu/upb/mimercado/
-├── data/               # Room (entidades, DAOs, base de datos), repositorio y datos de ejemplo
-├── ui/
-│   ├── components/     # Componentes reutilizables (campos, botones, logo…)
-│   ├── navigation/     # Rutas y navegación entre pantallas
-│   ├── screens/        # Pantallas: autenticación, listas, productos y configuración
-│   └── theme/          # Colores, tipografía (Poppins e Inter) y tema
-├── MainActivity.kt
-├── MercadoViewModel.kt
-└── MiMercadoApplication.kt
+MiMercado/                                  ← raíz del repositorio
+├── MiMercado/                              ← proyecto Android (ábrelo en Android Studio)
+│   ├── app/
+│   │   ├── build.gradle.kts
+│   │   ├── proguard-rules.pro
+│   │   └── src/main/
+│   │       ├── AndroidManifest.xml
+│   │       ├── java/co/edu/upb/mimercado/
+│   │       │   ├── data/                   # Room (entidades, DAOs, base de datos), repositorio y datos de ejemplo
+│   │       │   │   ├── AppDatabase.kt
+│   │       │   │   ├── Catalog.kt
+│   │       │   │   ├── Daos.kt
+│   │       │   │   ├── MercadoRepository.kt
+│   │       │   │   ├── Models.kt
+│   │       │   │   └── Seed.kt
+│   │       │   ├── ui/
+│   │       │   │   ├── components/         # Componentes reutilizables (campos, botones, logo…)
+│   │       │   │   ├── navigation/         # Rutas y navegación entre pantallas
+│   │       │   │   ├── screens/            # Autenticación, listas, productos y configuración
+│   │       │   │   └── theme/              # Colores, tipografía y tema
+│   │       │   ├── MainActivity.kt
+│   │       │   ├── MercadoViewModel.kt
+│   │       │   └── MiMercadoApplication.kt
+│   │       └── res/
+│   │           ├── drawable/               # Ícono de la app (vector)
+│   │           ├── font/                   # Poppins e Inter
+│   │           ├── mipmap-anydpi-v26/      # Ícono adaptativo
+│   │           └── values/                 # Colores, textos y temas
+│   ├── gradle/wrapper/
+│   ├── build.gradle.kts
+│   ├── settings.gradle.kts
+│   ├── gradle.properties
+│   ├── gradlew
+│   └── gradlew.bat
+├── WireframesManuales/                     # Wireframes de cada pantalla (PNG, DOCX y PDF)
+├── docs/                                   # Ícono y capturas usadas en este README
+├── MiMercado_Documento_Diseno_Inicial.docx # Documento de diseño inicial
+└── README.md
 ```
 
 ## 🚀 Cómo ejecutarlo
@@ -73,9 +101,9 @@ app/src/main/java/co/edu/upb/mimercado/
 ### Pasos
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/USUARIO/MiMercado.git
+   git clone https://github.com/Niscko/MiMercado.git
    ```
-2. Ábrelo en Android Studio y espera a que Gradle sincronice.
+2. En Android Studio abre la carpeta interna **`MiMercado/MiMercado`** (la que contiene `settings.gradle.kts`) y espera a que Gradle sincronice.
 3. Ejecuta la app en un emulador o celular con Android 8.0 (API 26) o superior.
 
 ### Cuenta de prueba
@@ -85,15 +113,25 @@ La app incluye una cuenta de demostración con listas de ejemplo:
 |---|---|
 | `andrea@email.com` | `mercado123` |
 
+## 📐 Diseño
+
+- [Documento de diseño inicial](MiMercado_Documento_Diseno_Inicial.docx)
+- [Wireframes manuales (PDF)](WireframesManuales/MiMercado_Wireframes_Manuales.pdf)
+
+<p align="center">
+  <img src="WireframesManuales/00_mapa.png" width="600" alt="Mapa de navegación">
+</p>
+
 ## 📦 Versión de publicación
 
-Para generar el App Bundle firmado (`.aab`) se necesita el archivo `keystore.properties` y la llave de subida, que **no están en el repositorio** por seguridad. Con esos archivos en la raíz del proyecto:
+Para generar el App Bundle firmado (`.aab`) se necesitan el archivo `keystore.properties` y la llave de subida, que **no están en el repositorio** por seguridad. Con esos archivos dentro de `MiMercado/MiMercado/`:
 
 ```bash
+cd MiMercado
 ./gradlew bundleRelease
 ```
 
-El archivo se genera en `app/build/outputs/bundle/release/`.
+El archivo se genera en `MiMercado/app/build/outputs/bundle/release/`.
 
 ## 🔒 Privacidad
 
