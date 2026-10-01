@@ -20,9 +20,9 @@
 ## 📱 Capturas
 
 <p align="center">
-  <img src="docs/capturas-de-pantalla/1-bienvenida.png" width="250" alt="Pantalla de bienvenida">
-  <img src="docs/capturas-de-pantalla/2-inicio.png" width="250" alt="Pantalla de inicio">
-  <img src="docs/capturas-de-pantalla/3-lista.png" width="250" alt="Detalle de una lista">
+  <img src="docs/1-bienvenida.png" width="250" alt="Pantalla de bienvenida">
+  <img src="docs/2-inicio.png" width="250" alt="Pantalla de inicio">
+  <img src="docs/3-lista.png" width="250" alt="Detalle de una lista">
 </p>
 
 ## ✨ Funcionalidades
